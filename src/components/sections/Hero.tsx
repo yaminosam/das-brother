@@ -29,32 +29,23 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section 
-      id="home" 
-      className="relative min-h-[92svh] md:min-h-screen flex flex-col justify-center items-start text-left px-6 md:px-12 lg:px-24 overflow-hidden pt-20"
-    >
+   <section
+  id="home"
+  className="relative min-h-screen flex flex-col justify-center items-start text-left px-6 md:px-12 lg:px-24 overflow-hidden pt-20 bg-cover bg-center"
+  style={{
+    backgroundImage:
+      "url('https://imgs.search.brave.com/x7yqtmtv_vorltGtXJfpLVSpxhiy3c4eXh0eNi04oBU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wNTAv/NjI1LzIwNC9zbWFs/bC9jb25zdHJ1Y3Rp/b24td29ya2VyLWlu/c3RhbGxpbmctZWxl/Y3RyaWNhbC13aXJp/bmctaW4tYS13YWxs/LXBob3RvLmpwZWc')",
+  }}
+>
       {/* Background radial glow */}
-      <div className="absolute inset-0 bg-gradient-to-r from-deep-grid-navy via-deep-grid-navy/80 to-transparent -z-20 pointer-events-none" />
-      <div className="absolute top-[20%] left-[10%] w-[35%] h-[35%] rounded-full bg-[#00D4FF]/5 blur-[120px] -z-20 pointer-events-none" />
+<div className="absolute inset-0 bg-black/60 -z-10"></div>      
+<div className="absolute top-[20%] left-[10%] w-[35%] h-[35%] rounded-full bg-[#00D4FF]/5 blur-[120px] -z-20 pointer-events-none" />
 
       {/* Grid overlay for electrical wire sensation */}
-      <div className="absolute inset-0 grid-bg opacity-5 -z-20 pointer-events-none" />
 
       {/* Content wrapper stacked above the background 3D Scene */}
       <div className="relative z-20 w-full flex flex-col justify-center items-start">
-        {/* Live Grid indicator badge */}
-        <motion.div
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 0.2, duration: 0.8 }}
-        className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-success-live/20 bg-success-live/5 text-[10px] md:text-xs font-mono text-success-live mb-6 tracking-widest shadow-[0_0_15px_rgba(57,255,20,0.1)]"
-      >
-        <span className="relative flex h-2 w-2">
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-success-live opacity-75"></span>
-          <span className="relative inline-flex rounded-full h-2 w-2 bg-success-live"></span>
-        </span>
-        LIVE GRID CONNECTED: Pune Infrastructure Hub
-      </motion.div>
+       
 
       {/* Main Title Heading - Word by word reveal */}
       <motion.div
@@ -122,6 +113,7 @@ export const Hero: React.FC = () => {
           { num: "5+", label: "SUBSTATIONS BUILT" },
           { num: "10K+", label: "HT/LT JOINTS" },
           { num: "62", label: "SKILLED ENGINEERS" }
+          
         ].map((stat, idx) => (
           <div key={idx} className="flex flex-col">
             <span className="font-mono text-xl md:text-3xl font-black text-arc-cyan tracking-wider">
