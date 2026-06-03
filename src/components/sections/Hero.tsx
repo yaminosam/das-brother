@@ -34,7 +34,7 @@ export const Hero: React.FC = () => {
   className="relative h-screen flex flex-col justify-center items-start text-left px-6 md:px-12 lg:px-24 overflow-hidden pt-20 bg-cover bg-center"
   style={{
     backgroundImage:
-      "url('C:/Users/LENOVO/OneDrive/Pictures/dasbro.jpeg')",
+      "url('public/images/dasbro.jpeg')",
   }}
 >
       {/* Background radial glow */}
