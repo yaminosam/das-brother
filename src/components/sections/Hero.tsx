@@ -27,7 +27,7 @@ export const Hero: React.FC = () => {
         ease: [0.215, 0.61, 0.355, 1] // No need for 'as const' anymore
       }
     }
-  };
+  };return (
       <section
     
       id="home"
@@ -36,7 +36,7 @@ export const Hero: React.FC = () => {
         // Fixed path: removed "public"
         backgroundImage: "url('/images/dasbro.jpeg')",
       }}
-    >return
+    >
 
       {/* Background radial glow */}
       <div className="absolute inset-0 bg-slate-950/30 z-0" />
@@ -141,7 +141,7 @@ export const Hero: React.FC = () => {
         </motion.div>
       </div>
     </section>
-  
+  )
 };
 
 export default Hero;
