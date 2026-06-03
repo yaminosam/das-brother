@@ -34,7 +34,7 @@ export const Hero: React.FC = () => {
   className="relative min-h-screen flex flex-col justify-center items-start text-left px-6 md:px-12 lg:px-24 overflow-hidden pt-20 bg-cover bg-center"
   style={{
     backgroundImage:
-      "url('https://imgs.search.brave.com/x7yqtmtv_vorltGtXJfpLVSpxhiy3c4eXh0eNi04oBU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wNTAv/NjI1LzIwNC9zbWFs/bC9jb25zdHJ1Y3Rp/b24td29ya2VyLWlu/c3RhbGxpbmctZWxl/Y3RyaWNhbC13aXJp/bmctaW4tYS13YWxs/LXBob3RvLmpwZWc')",
+      "url('C:/Users/LENOVO/OneDrive/Pictures/dasbro.jpeg')",
   }}
 >
       {/* Background radial glow */}
