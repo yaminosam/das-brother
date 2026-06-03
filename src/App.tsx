@@ -11,45 +11,31 @@ import CtaBanner from "./components/sections/CtaBanner";
 import Footer from "./components/sections/Footer";
 
 function App() {
-  
-
-
   return (
-    <>
-      
-          
-         
+    <div className="min-h-screen bg-white dark:bg-slate-950">
+      {/* 2. Glassmorphism Header Navbar */}
+      <Navbar />
 
-          {/* 2. Glassmorphism Header Navbar */}
-          <Navbar />
+      {/* 3. Hero Section */}
+      <Hero />
 
-          {/* 3. Hero Section (Wrapping background 3D Tower Canvas) */}
-          <div className="relative">
-  <Hero />
-</div>
-
-  <div className="min-h-screen bg-white dark:bg-slate-950">
-    <Navbar />
-    <Hero />
-    <TrustBar />
-    <Services hoveredService={null} onHoverService={function (_index: number | null): void {
+      {/* 4. Rest of the Sections */}
+      <TrustBar />
+      <Services 
+        hoveredService={null} 
+        onHoverService={function (_index: number | null): void {
           throw new Error("Function not implemented.");
-        } } />
-    <About />
-    <Stats />
-    <ServicesDetail />
-    <Testimonials />
-    <Careers />
-    <CtaBanner />
-    <Footer />
-  </div>
-
-
-        
-      
-    </>
+        }} 
+      />
+      <About />
+      <Stats />
+      <ServicesDetail />
+      <Testimonials />
+      <Careers />
+      <CtaBanner />
+      <Footer />
+    </div>
   );
 }
 
 export default App;
-
