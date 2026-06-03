@@ -28,13 +28,13 @@ export const Hero: React.FC = () => {
     }
   };
 
-   (
+  return (
    <section
   id="home"
   className="relative h-screen flex flex-col justify-center items-start text-left px-6 md:px-12 lg:px-24 overflow-hidden pt-20 bg-cover bg-center"
   style={{
     backgroundImage:
-      "url('C:/Users/LENOVO/OneDrive/Pictures/dasbro.jpeg')",
+      "url('public/images/dasbro.jpeg')",
   }}
 >
       {/* Background radial glow */}
@@ -128,7 +128,8 @@ export const Hero: React.FC = () => {
       </div>
 
       {/* Animated downward bouncing scroll indicator */}
-<div className="absolute bottom-6 left-1/2 ...">        
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none">
+        
          
       </div>
     </section>
