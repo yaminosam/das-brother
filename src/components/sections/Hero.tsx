@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Zap, ArrowRight, ChevronDown } from "lucide-react";
+import { Zap, ArrowRight } from "lucide-react";
 
 export const Hero: React.FC = () => {
   const words = "Empowering Maharashtra Since 1987".split(" ");
@@ -31,14 +31,14 @@ export const Hero: React.FC = () => {
   return (
    <section
   id="home"
-  className="relative min-h-screen flex flex-col justify-center items-start text-left px-6 md:px-12 lg:px-24 overflow-hidden pt-20 bg-cover bg-center"
+  className="relative h-screen flex flex-col justify-center items-start text-left px-6 md:px-12 lg:px-24 overflow-hidden pt-20 bg-cover bg-center"
   style={{
     backgroundImage:
       "url('C:/Users/LENOVO/OneDrive/Pictures/dasbro.jpeg')",
   }}
 >
       {/* Background radial glow */}
-<div className="absolute inset-0 bg-black/60 -z-10"></div>      
+<div className="absolute inset-0 bg-slate-950/75 z-0" />
 <div className="absolute top-[20%] left-[10%] w-[35%] h-[35%] rounded-full bg-[#00D4FF]/5 blur-[120px] -z-20 pointer-events-none" />
 
       {/* Grid overlay for electrical wire sensation */}
@@ -128,20 +128,8 @@ export const Hero: React.FC = () => {
       </div>
 
       {/* Animated downward bouncing scroll indicator */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none">
-        <motion.span 
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-          className="text-xs font-mono text-text-light/35 tracking-widest"
-        >
-          SCROLL FOR COPPERS
-        </motion.span>
-        <motion.div
-          animate={{ y: [0, 6, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <ChevronDown className="w-4 h-4 text-electric-amber" />
-        </motion.div>
+<div className="absolute bottom-6 left-1/2 ...">        
+         
       </div>
     </section>
   );
