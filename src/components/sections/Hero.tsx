@@ -28,7 +28,7 @@ export const Hero: React.FC = () => {
     }
   };
 
-  return (
+   (
    <section
   id="home"
   className="relative h-screen flex flex-col justify-center items-start text-left px-6 md:px-12 lg:px-24 overflow-hidden pt-20 bg-cover bg-center"
