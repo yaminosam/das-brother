@@ -3,23 +3,16 @@
 @import "tailwindcss";
 
 @theme {
-  --color-electric-amber: #E87722;
-  --color-electric-amber-dark: #B55814;
-  --color-deep-grid-navy: #1A1A2E;
-  --color-arc-cyan: #00D4FF;
-  --color-substation-dark: #0F3460;
-  --color-text-light: #E8EDF5;
-  --color-success-live: #39FF14;
+--color-primary: #0F172A;
+--color-accent: #F59E0B;
+--color-background: #FFFFFF;
+--color-text: #1F2937;
 
   --font-orbitron: "Plus Jakarta Sans", sans-serif;
   --font-rajdhani: "Plus Jakarta Sans", sans-serif;
   --font-inter: "Inter", sans-serif;
   --font-mono: "Share Tech Mono", monospace;
 
-  --animate-anti-gravity: anti-gravity 6s ease-in-out infinite;
-  --animate-pulse-glow: pulse-glow 2s infinite;
-  --animate-flicker: flicker 0.15s infinite;
-  --animate-pulse-ring: pulse-ring 2s cubic-bezier(0.215, 0.610, 0.355, 1) infinite;
   --animate-marquee: marquee 30s linear infinite;
 
   @keyframes anti-gravity {
@@ -130,44 +123,3 @@ body {
     linear-gradient(to bottom, rgba(0, 212, 255, 0.04) 1px, transparent 1px);
 }
 
-/* Glowing text and buttons */
-.text-glow-amber {
-  text-shadow: 0 0 10px rgba(245, 166, 35, 0.5), 0 0 20px rgba(245, 166, 35, 0.2);
-}
-
-.text-glow-cyan {
-  text-shadow: 0 0 10px rgba(0, 212, 255, 0.6), 0 0 20px rgba(0, 212, 255, 0.3);
-}
-
-.btn-glow-amber {
-  box-shadow: 0 0 15px rgba(245, 166, 35, 0.4);
-  transition: all 0.3s ease-in-out;
-}
-
-.btn-glow-amber:hover {
-  box-shadow: 0 0 30px rgba(245, 166, 35, 0.8);
-  transform: translateY(-2px);
-}
-
-/* Power Surge Loading Styles */
-.voltage-meter-fill {
-  background: linear-gradient(90deg, #F5A623 0%, #00D4FF 100%);
-  box-shadow: 0 0 15px #00D4FF, 0 0 5px #F5A623;
-}
-
-/* Hide canvas defaults */
-canvas {
-  display: block;
-  user-select: none;
-}
-
-/* Custom Cursor Trail Canvas */
-.cursor-trail-canvas {
-  pointer-events: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 9999;
-}
