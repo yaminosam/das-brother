@@ -1,7 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Zap, ArrowRight } from "lucide-react";
-
 export const Hero: React.FC = () => {
   const words = "Empowering Maharashtra Since 1987".split(" ");
 
@@ -28,13 +27,13 @@ export const Hero: React.FC = () => {
     }
   };
 
-   (
+   return (
    <section
   id="home"
   className="relative h-screen flex flex-col justify-center items-start text-left px-6 md:px-12 lg:px-24 overflow-hidden pt-20 bg-cover bg-center"
   style={{
     backgroundImage:
-      "url('C:/Users/LENOVO/OneDrive/Pictures/dasbro.jpeg')",
+      "url('/images/dasbro.jpeg')",
   }}
 >
       {/* Background radial glow */}
@@ -127,10 +126,7 @@ export const Hero: React.FC = () => {
       </motion.div>
       </div>
 
-      {/* Animated downward bouncing scroll indicator */}
-<div className="absolute bottom-6 left-1/2 ...">        
-         
-      </div>
+   
     </section>
   );
 };
