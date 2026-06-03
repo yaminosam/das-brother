@@ -28,17 +28,18 @@ export const Hero: React.FC = () => {
       }
     }
   };
-  return (
-    <section
+      <section
+    
       id="home"
       className="relative h-screen flex flex-col justify-center items-start text-left px-6 md:px-12 lg:px-24 overflow-hidden pt-20 bg-cover bg-center"
       style={{
         // Fixed path: removed "public"
         backgroundImage: "url('/images/dasbro.jpeg')",
       }}
-    >
+    >return
+
       {/* Background radial glow */}
-      <div className="absolute inset-0 bg-slate-950/75 z-0" />
+      <div className="absolute inset-0 bg-slate-950/30 z-0" />
       <div className="absolute top-[20%] left-[10%] w-[35%] h-[35%] rounded-full bg-[#00D4FF]/5 blur-[120px] -z-20 pointer-events-none" />
 
       {/* Content wrapper stacked above the background 3D Scene */}
@@ -140,7 +141,7 @@ export const Hero: React.FC = () => {
         </motion.div>
       </div>
     </section>
-  );
+  
 };
 
 export default Hero;
