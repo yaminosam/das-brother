@@ -27,7 +27,8 @@ export const Hero: React.FC = () => {
         ease: [0.215, 0.61, 0.355, 1] // No need for 'as const' anymore
       }
     }
-  };return (
+  };
+      return (
       <section
     
       id="home"
@@ -141,7 +142,7 @@ export const Hero: React.FC = () => {
         </motion.div>
       </div>
     </section>
-  )
+      );
 };
 
 export default Hero;
