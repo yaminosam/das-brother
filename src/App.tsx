@@ -14,7 +14,7 @@ function App() {
   
 
 
-  
+  return (
     <>
       
           
@@ -27,7 +27,7 @@ function App() {
           <div className="relative">
   <Hero />
 </div>
-return (
+
   <div className="min-h-screen bg-white dark:bg-slate-950">
     <Navbar />
     <Hero />
@@ -43,12 +43,12 @@ return (
     <CtaBanner />
     <Footer />
   </div>
-);
+
 
         
       
     </>
-  
+  );
 }
 
 export default App;
