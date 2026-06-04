@@ -6,7 +6,7 @@
   --color-primary: #0F172A;
   --color-accent: #F59E0B;
   --color-background: #FFFFFF;
-  --color-text: #1F2937;
+  --color-text: #e4e6e9;
 
   --font-orbitron: "Plus Jakarta Sans", sans-serif;
   --font-rajdhani: "Plus Jakarta Sans", sans-serif;
@@ -20,19 +20,25 @@
   --animate-flicker: flicker 0.15s infinite;
 
   @keyframes anti-gravity {
-    0%, 100% {
+
+    0%,
+    100% {
       transform: translateY(0px) rotate(-1deg);
     }
+
     50% {
       transform: translateY(-18px) rotate(1deg);
     }
   }
 
   @keyframes pulse-glow {
-    0%, 100% {
+
+    0%,
+    100% {
       box-shadow: 0 0 15px rgba(245, 166, 35, 0.4), inset 0 0 10px rgba(245, 166, 35, 0.2);
       border-color: rgba(245, 166, 35, 0.5);
     }
+
     50% {
       box-shadow: 0 0 30px rgba(245, 166, 35, 0.8), inset 0 0 20px rgba(245, 166, 35, 0.4);
       border-color: rgba(245, 166, 35, 0.9);
@@ -44,6 +50,7 @@
       transform: scale(0.95);
       opacity: 1;
     }
+
     100% {
       transform: scale(2);
       opacity: 0;
@@ -51,13 +58,25 @@
   }
 
   @keyframes flicker {
-    0%, 100% { opacity: 0.98; }
-    50% { opacity: 0.92; }
+
+    0%,
+    100% {
+      opacity: 0.98;
+    }
+
+    50% {
+      opacity: 0.92;
+    }
   }
 
   @keyframes marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
   }
 }
 
@@ -115,15 +134,14 @@ body {
 /* Grid Background */
 .grid-bg {
   background-size: 40px 40px;
-  background-image: 
+  background-image:
     linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
 }
 
 .grid-bg-active {
   background-size: 50px 50px;
-  background-image: 
+  background-image:
     linear-gradient(to right, rgba(0, 212, 255, 0.04) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(0, 212, 255, 0.04) 1px, transparent 1px);
 }
-
