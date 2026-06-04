@@ -5,7 +5,7 @@
 @theme {
   --color-primary: #0F172A;
   --color-accent: #F59E0B;
-  --color-background: #FFFFFF;
+  --color-background: #0A0F1E;
   --color-text-light: #e4e6e9;
 
   --font-orbitron: "Plus Jakarta Sans", sans-serif;
@@ -83,8 +83,8 @@
 /* Custom Base Styles */
 html {
   scroll-behavior: smooth;
-  background-color: #ffffff;
-  color: #E8EDF5;
+  background-color: #0A0F1E;
+  color: #e4e6e9;
   font-family: "Inter", sans-serif;
   overflow-x: hidden;
 }
@@ -92,7 +92,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background-color: #f2f2f6;
+  background-color: #0A0F1E;
   overflow-x: hidden;
 }
 

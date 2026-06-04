@@ -12,7 +12,7 @@ import Footer from "./components/sections/Footer";
 
 function App() {
   return (
-    <div className="min-h-screen bg-white dark:bg-slate-950">
+    <div className="min-h-screen bg-background text-text-light">
       {/* 2. Glassmorphism Header Navbar */}
       <Navbar />
 
