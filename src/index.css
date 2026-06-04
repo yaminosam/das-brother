@@ -60,7 +60,7 @@
 /* Custom Base Styles */
 html {
   scroll-behavior: smooth;
-  background-color: #1A1A2E;
+  background-color: #ffffff;
   color: #E8EDF5;
   font-family: "Inter", sans-serif;
   overflow-x: hidden;
@@ -69,7 +69,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background-color: #1A1A2E;
+  background-color: #f2f2f6;
   overflow-x: hidden;
 }
 
