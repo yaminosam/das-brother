@@ -79,25 +79,25 @@ export const Hero: React.FC = () => {
             Specialist Electrical EPC Contractors. Engineering high-voltage substations, complete HT/LT networks, and precision power panels for Pune's leading industrial grids.
           </motion.p>
 
-          {/* Action Call to Buttons */}
-          <motion.div
-            variants={wordVariants}
-            className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
+          {/* Action Call to Buttons - NOW WITH SOLID DARK BACKGROUNDS */}
+        <motion.div
+          variants={wordVariants}
+          className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
+        >
+          <a
+            href="#services"
+            className="px-8 py-4 rounded-xl font-orbitron text-xs md:text-sm font-bold tracking-widest text-white bg-slate-950 hover:bg-slate-800 border border-slate-700 flex items-center justify-center gap-3 transition-all duration-300 shadow-xl hover:-translate-y-0.5"
           >
-            <a
-              href="#services"
-              className="px-8 py-4 rounded-xl font-orbitron text-xs md:text-sm font-bold tracking-widest text-deep-grid-navy bg-electric-amber hover:bg-electric-amber-dark flex items-center justify-center gap-3 transition-all duration-300 shadow-[0_0_15px_rgba(245,166,35,0.2)] hover:shadow-[0_0_30px_rgba(245,166,35,0.5)] hover:-translate-y-0.5"
-            >
-              OUR SERVICES <Zap className="w-4 h-4 fill-current" />
-            </a>
+            OUR SERVICES <Zap className="w-4 h-4 text-electric-amber" />
+          </a>
 
-            <a
-              href="#about"
-              className="px-8 py-4 rounded-xl font-orbitron text-xs md:text-sm font-bold tracking-widest text-text-light border border-neutral-800 bg-[#0F3460]/40 hover:bg-[#0F3460]/80 flex items-center justify-center gap-2 transition-all duration-300 hover:border-neutral-700"
-            >
-              VIEW PROJECTS <ArrowRight className="w-4 h-4" />
-            </a>
-          </motion.div>
+          <a
+            href="#about"
+            className="px-8 py-4 rounded-xl font-orbitron text-xs md:text-sm font-bold tracking-widest text-white bg-slate-950 hover:bg-slate-800 border border-slate-700 flex items-center justify-center gap-2 transition-all duration-300 shadow-xl hover:-translate-y-0.5"
+          >
+            VIEW PROJECTS <ArrowRight className="w-4 h-4 text-arc-cyan" />
+          </a>
+        </motion.div>
         </motion.div>
 
         {/* Floating metrics grid */}
