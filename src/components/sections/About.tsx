@@ -115,16 +115,21 @@ export const About: React.FC = () => {
           {/* Left Column: STICKY 3D Canvas Substation Scene */}
           <div className="lg:col-span-5 lg:sticky lg:top-24 h-[350px] lg:h-[500px] rounded-2xl border border-neutral-900 bg-[#0F3460]/25 overflow-hidden shadow-[inset_0_0_20px_rgba(0,0,0,0.5)] group relative isolate z-0">
             
-            {/* Live Indicator Overlays */}
+            {/* Static Image Overlays */}
             <div className="absolute top-4 left-4 z-20 flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#1A1A2E]/80 border border-neutral-800 text-[10px] font-mono text-text-light/60">
-              <span className="w-1.5 h-1.5 rounded-full bg-arc-cyan animate-pulse" />
-              CAMERA: AUTOROTATE ACTIVE
-            </div>
-            
-            <div className="absolute bottom-4 right-4 z-20 flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#1A1A2E]/80 border border-neutral-800 text-[10px] font-mono text-electric-amber">
-              3D SUBSTATION DIAGRAM
+              <span className="w-1.5 h-1.5 rounded-full bg-arc-cyan" />
+              OUR INFRASTRUCTURE
             </div>
 
+            {/* Render Static Image */}
+            <div className="w-full h-full min-h-[400px] lg:h-auto flex-grow relative overflow-hidden rounded-b-2xl lg:rounded-br-2xl">
+              <img 
+                src="/images/cameremode.PNG" 
+                alt="Substation Infrastructure" 
+                className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out"
+              />
+            </div>
+          </div>
             {/* Render 3D Substation Model */}
             <SubstationScene />
           </div>
@@ -187,7 +192,7 @@ export const About: React.FC = () => {
 
         </div>
 
-      </div>
+      
     </section>
   );
 };

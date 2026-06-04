@@ -59,17 +59,17 @@ export const Navbar: React.FC = () => {
             </div>
           </a>
 
-          {/* Desktop Nav Links */}
-          <div className="hidden lg:flex items-center gap-8">
+          {/* Desktop Nav Links - NOW WITH DARK BUTTON STYLING */}
+          <div className="hidden lg:flex items-center gap-3">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="relative font-inter text-sm font-medium text-text-light/80 hover:text-text-light tracking-wide transition-colors duration-300 py-2 group"
+                className="relative font-inter text-sm font-medium text-text-light/80 hover:text-white transition-all duration-300 px-4 py-2 rounded-xl bg-slate-900/80 hover:bg-slate-800 border border-slate-800/50 shadow-sm backdrop-blur-sm group"
               >
                 {link.name}
                 {/* Electric hover sweep line */}
-                <span className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-electric-amber to-arc-cyan origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out shadow-[0_0_8px_rgba(0,212,255,0.5)]" />
+                <span className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-electric-amber to-arc-cyan origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out shadow-[0_0_8px_rgba(0,212,255,0.5)] rounded-b-xl" />
               </a>
             ))}
           </div>
