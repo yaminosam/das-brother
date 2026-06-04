@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Compass, Network, Cable, Cpu, AlertTriangle, ShieldCheck, ArrowRight } from "lucide-react";
-import PcbScene from "../3d/PcbScene";
 
 interface ServicesProps {
   hoveredService: number | null;
@@ -123,15 +122,24 @@ export const Services: React.FC<ServicesProps> = ({ hoveredService, onHoverServi
         {/* Split Layout: 3D PCB Left | Service Cards Right */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
           
-          {/* Left Column: 3D Circuit Board Canvas */}
+          {/* Left Column: Static Image Replacement */}
           <div className="lg:col-span-5 min-h-[400px] lg:min-h-0 rounded-2xl border border-neutral-900 bg-[#0F3460]/25 overflow-hidden shadow-[inset_0_0_20px_rgba(0,0,0,0.5)] relative isolate z-0 flex flex-col justify-stretch">
+            
+            {/* Floating Label */}
             <div className="absolute top-4 left-4 z-20 flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#1A1A2E]/80 border border-neutral-800 text-[10px] font-mono text-text-light/50">
-              <span className="w-1.5 h-1.5 rounded-full bg-electric-amber animate-pulse" />
-              3D CIRCUIT BOARD SIMULATION
+              <span className="w-1.5 h-1.5 rounded-full bg-arc-cyan" />
+              OUR EXPERTISE
             </div>
+            
+            {/* The Image */}
             <div className="w-full h-full min-h-[400px] lg:h-auto flex-grow relative">
-              <PcbScene hoveredService={hoveredService} onHoverService={onHoverService} />
+              <img 
+                src="/images/circuitborard.png" 
+                alt="Electrical Services" 
+                className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out"
+              />
             </div>
+            
           </div>
 
           {/* Right Column: HTML Cards Grid (2 columns on desktop/tablet) */}
