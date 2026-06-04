@@ -123,7 +123,7 @@ export const About: React.FC = () => {
             {/* Render Static Image */}
             <div className="w-full h-full min-h-[400px] lg:h-auto flex-grow relative overflow-hidden rounded-b-2xl lg:rounded-br-2xl">
               <img 
-                src="/images/cameremode.PNG" 
+                src="/images/cameremode.png" 
                 alt="Substation Infrastructure" 
                 className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out"
               />
