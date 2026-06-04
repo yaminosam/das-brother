@@ -134,7 +134,7 @@ export const Services: React.FC<ServicesProps> = ({ hoveredService, onHoverServi
             {/* The Image */}
             <div className="w-full h-full min-h-[400px] lg:h-auto flex-grow relative">
               <img 
-                src="public/images/circuitborard.png" 
+                src="/images/circuitborard.png" 
                 alt="Electrical Services" 
                 className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out"
               />
