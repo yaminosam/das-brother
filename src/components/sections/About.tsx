@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { SubstationScene } from "../3d/SubstationScene";
 import { Calendar, Briefcase, Award, TrendingUp } from "lucide-react";
 
 export const About: React.FC = () => {
@@ -131,7 +130,6 @@ export const About: React.FC = () => {
             </div>
           </div>
             {/* Render 3D Substation Model */}
-            <SubstationScene />
           </div>
 
           {/* Right Column: Historical Vertical Timeline */}
