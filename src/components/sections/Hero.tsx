@@ -40,7 +40,7 @@ export const Hero: React.FC = () => {
     >
 
       {/* Background radial glow */}
-      <div className="absolute inset-0 bg-slate-950/60 z-0" />
+      <div className="absolute inset-0 bg-slate-950/75 z-0" />
       <div className="absolute top-[20%] left-[10%] w-[35%] h-[35%] rounded-full bg-[#00D4FF]/5 blur-[120px] -z-20 pointer-events-none" />
 
       {/* Content wrapper stacked above the background 3D Scene */}

@@ -57,8 +57,8 @@ export const ServicesDetail: React.FC = () => {
   ];
 
   return (
-    <section 
-      id="services-detail" 
+    <section
+      id="services-detail"
       className="relative py-24 px-6 md:px-12 lg:px-24 overflow-hidden z-10"
     >
       <div className="max-w-7xl mx-auto flex flex-col gap-24">
@@ -67,7 +67,7 @@ export const ServicesDetail: React.FC = () => {
           const isEven = index % 2 === 0;
 
           return (
-            <div 
+            <div
               key={detail.id}
               className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center"
             >
@@ -81,15 +81,15 @@ export const ServicesDetail: React.FC = () => {
                     {detail.category}
                   </span>
                 </div>
-                
+
                 <h3 className="font-orbitron font-extrabold text-2xl md:text-4xl text-text-light mb-2">
                   {detail.title}
                 </h3>
-                
+
                 <h4 className="font-orbitron text-xs md:text-sm font-semibold text-electric-amber mb-6 tracking-wide">
                   {detail.subtitle}
                 </h4>
-                
+
                 <p className="font-inter text-xs md:text-sm text-text-light/60 leading-relaxed mb-6">
                   {detail.desc}
                 </p>
@@ -98,9 +98,9 @@ export const ServicesDetail: React.FC = () => {
                 <ul className="flex flex-col gap-3">
                   {detail.specs.map((spec, specIdx) => (
                     <li key={specIdx} className="flex items-start gap-3">
-                      <CheckCircle2 
-                        className="w-4 h-4 mt-0.5 flex-shrink-0" 
-                        style={{ color: detail.accentColor }} 
+                      <CheckCircle2
+                        className="w-4 h-4 mt-0.5 flex-shrink-0"
+                        style={{ color: detail.accentColor }}
                       />
                       <span className="font-inter text-xs md:text-sm text-text-light/80">
                         {spec}
@@ -111,10 +111,9 @@ export const ServicesDetail: React.FC = () => {
               </div>
 
               {/* Graphical Image Area */}
-              <div 
-                className={`lg:col-span-6 h-[260px] md:h-[340px] rounded-2xl border border-neutral-900 bg-[#0F3460]/15 overflow-hidden shadow-[inset_0_0_15px_rgba(0,0,0,0.5)] relative group ${
-                  isEven ? "lg:order-2" : "lg:order-1"
-                }`}
+              <div
+                className={`lg:col-span-6 h-[260px] md:h-[340px] rounded-2xl border border-neutral-900 bg-[#0F3460]/15 overflow-hidden shadow-[inset_0_0_15px_rgba(0,0,0,0.5)] relative group ${isEven ? "lg:order-2" : "lg:order-1"
+                  }`}
               >
                 {/* Visual corners to reinforce industrial style */}
                 <div className="absolute top-2 left-2 w-1.5 h-1.5 border-t border-l border-neutral-800 z-10" />
@@ -122,12 +121,12 @@ export const ServicesDetail: React.FC = () => {
                 <div className="absolute bottom-2 left-2 w-1.5 h-1.5 border-b border-l border-neutral-800 z-10" />
                 <div className="absolute bottom-2 right-2 w-1.5 h-1.5 border-b border-r border-neutral-800 z-10" />
 
-                <img 
-                  src={detail.image} 
-                  alt={detail.title} 
+                <img
+                  src={detail.image}
+                  alt={detail.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
-                
+
                 {/* Subtle dark gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0A0F1E]/50 to-transparent pointer-events-none" />
               </div>

@@ -79,13 +79,13 @@ export const About: React.FC = () => {
       <div className="max-w-7xl mx-auto">
 
         {/* Title Block with Background Image */}
-        <div 
-          ref={titleRef} 
+        <div
+          ref={titleRef}
           className="mb-16 text-center max-w-5xl mx-auto rounded-3xl border border-neutral-900 overflow-hidden relative p-8 md:p-12 lg:p-16 shadow-[inset_0_0_40px_rgba(0,0,0,0.8)] group"
         >
           {/* Background Image with Overlay */}
-          <div 
-            className="absolute inset-0 bg-cover bg-center -z-10 opacity-30 group-hover:scale-105 transition-transform duration-700 ease-out" 
+          <div
+            className="absolute inset-0 bg-cover bg-center -z-10 opacity-30 group-hover:scale-105 transition-transform duration-700 ease-out"
             style={{ backgroundImage: "url('/images/cameremode.png')" }}
           />
           {/* Radial/Linear Gradient overlay to ensure high readability */}
@@ -132,11 +132,10 @@ export const About: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] as const }}
-                className={`group ${
-                  isLast 
-                    ? "md:col-span-2 md:justify-self-center w-full md:max-w-xl" 
+                className={`group ${isLast
+                    ? "md:col-span-2 md:justify-self-center w-full md:max-w-xl"
                     : "w-full"
-                }`}
+                  }`}
               >
                 {/* Timeline Bubble Content */}
                 <div className="p-6 md:p-8 rounded-2xl glass-panel border border-neutral-900 bg-[#0F3460]/25 hover:border-neutral-800 hover:bg-[#0F3460]/45 hover:shadow-[0_4px_30px_rgba(0,0,0,0.3)] transition-all duration-300 relative h-full flex flex-col justify-between">

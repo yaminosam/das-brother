@@ -173,9 +173,9 @@ export const Services: React.FC<ServicesProps> = ({ hoveredService, onHoverServi
                       <div>
                         {/* Service Card Image Banner */}
                         <div className="w-full h-32 rounded-xl overflow-hidden mb-5 border border-neutral-900/50 relative">
-                          <img 
-                            src={service.image} 
-                            alt={service.title} 
+                          <img
+                            src={service.image}
+                            alt={service.title}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-[#0A0F1E] to-transparent opacity-60" />
