@@ -6,7 +6,7 @@ import { Zap, ArrowRight, ChevronDown } from "lucide-react";
 export const Hero: React.FC = () => {
   const words = "Empowering Maharashtra Since 1987".split(" ");
 
- const containerVariants: Variants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -28,9 +28,9 @@ export const Hero: React.FC = () => {
       }
     }
   };
-      return (
-      <section
-    
+  return (
+    <section
+
       id="home"
       className="relative h-screen flex flex-col justify-center items-start text-left px-6 md:px-12 lg:px-24 overflow-hidden pt-20 bg-cover bg-center"
       style={{
@@ -40,12 +40,12 @@ export const Hero: React.FC = () => {
     >
 
       {/* Background radial glow */}
-      <div className="absolute inset-0 bg-slate-950/40 z-0" />
+      <div className="absolute inset-0 bg-slate-950/60 z-0" />
       <div className="absolute top-[20%] left-[10%] w-[35%] h-[35%] rounded-full bg-[#00D4FF]/5 blur-[120px] -z-20 pointer-events-none" />
 
       {/* Content wrapper stacked above the background 3D Scene */}
       <div className="relative z-20 w-full flex flex-col justify-center items-start">
-        
+
         {/* Main Title Heading - Word by word reveal */}
         <motion.div
           variants={containerVariants}
@@ -80,24 +80,24 @@ export const Hero: React.FC = () => {
           </motion.p>
 
           {/* Action Call to Buttons - NOW WITH SOLID DARK BACKGROUNDS */}
-        <motion.div
-          variants={wordVariants}
-          className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
-        >
-          <a
-            href="#services"
-            className="px-8 py-4 rounded-xl font-orbitron text-xs md:text-sm font-bold tracking-widest text-white bg-slate-950 hover:bg-slate-800 border border-slate-700 flex items-center justify-center gap-3 transition-all duration-300 shadow-xl hover:-translate-y-0.5"
+          <motion.div
+            variants={wordVariants}
+            className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
           >
-            OUR SERVICES <Zap className="w-4 h-4 text-electric-amber" />
-          </a>
+            <a
+              href="#services"
+              className="px-8 py-4 rounded-xl font-orbitron text-xs md:text-sm font-bold tracking-widest text-white bg-slate-950 hover:bg-slate-800 border border-slate-700 flex items-center justify-center gap-3 transition-all duration-300 shadow-xl hover:-translate-y-0.5"
+            >
+              OUR SERVICES <Zap className="w-4 h-4 text-electric-amber" />
+            </a>
 
-          <a
-            href="#about"
-            className="px-8 py-4 rounded-xl font-orbitron text-xs md:text-sm font-bold tracking-widest text-white bg-slate-950 hover:bg-slate-800 border border-slate-700 flex items-center justify-center gap-2 transition-all duration-300 shadow-xl hover:-translate-y-0.5"
-          >
-            VIEW PROJECTS <ArrowRight className="w-4 h-4 text-arc-cyan" />
-          </a>
-        </motion.div>
+            <a
+              href="#about"
+              className="px-8 py-4 rounded-xl font-orbitron text-xs md:text-sm font-bold tracking-widest text-white bg-slate-950 hover:bg-slate-800 border border-slate-700 flex items-center justify-center gap-2 transition-all duration-300 shadow-xl hover:-translate-y-0.5"
+            >
+              VIEW PROJECTS <ArrowRight className="w-4 h-4 text-arc-cyan" />
+            </a>
+          </motion.div>
         </motion.div>
 
         {/* Floating metrics grid */}
@@ -127,7 +127,7 @@ export const Hero: React.FC = () => {
 
       {/* Animated downward bouncing scroll indicator */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none">
-        <motion.span 
+        <motion.span
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
           className="text-xs font-mono text-text-light/35 tracking-widest"
@@ -142,7 +142,7 @@ export const Hero: React.FC = () => {
         </motion.div>
       </div>
     </section>
-      );
+  );
 };
 
 export default Hero;
