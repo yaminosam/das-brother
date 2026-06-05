@@ -73,17 +73,17 @@ export const Services: React.FC<ServicesProps> = ({ hoveredService, onHoverServi
 
   const cardVariants = {
     hidden: { opacity: 0, y: 55 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as const }
     }
   };
 
   return (
-    <section 
-      id="services" 
-      ref={sectionRef} 
+    <section
+      id="services"
+      ref={sectionRef}
       className="relative py-24 px-6 md:px-12 lg:px-24 overflow-hidden z-10 bg-[#1A1A2E]/40"
     >
       {/* Background elements */}
@@ -121,30 +121,30 @@ export const Services: React.FC<ServicesProps> = ({ hoveredService, onHoverServi
 
         {/* Split Layout: 3D PCB Left | Service Cards Right */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
-          
+
           {/* Left Column: Static Image Replacement */}
-          <div className="lg:col-span-5 min-h-[400px] lg:min-h-0 rounded-2xl border border-neutral-900 bg-[#0F3460]/25 overflow-hidden shadow-[inset_0_0_20px_rgba(0,0,0,0.5)] relative isolate z-0 flex flex-col justify-stretch">
-            
+          <div className="lg:col-span-5 min-h-[500px] lg:min-h-0 rounded-2xl border border-neutral-900 bg-[#0F3460]/25 overflow-hidden shadow-[inset_0_0_20px_rgba(0,0,0,0.5)] relative isolate z-0 flex flex-col justify-stretch">
+
             {/* Floating Label */}
             <div className="absolute top-4 left-4 z-20 flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#1A1A2E]/80 border border-neutral-800 text-[10px] font-mono text-text-light/50">
               <span className="w-1.5 h-1.5 rounded-full bg-arc-cyan" />
               OUR EXPERTISE
             </div>
-            
+
             {/* The Image */}
-            <div className="w-full h-full min-h-[400px] lg:h-auto flex-grow relative">
+            <div className="w-full h-full min-h-[500px] lg:h-auto flex-grow relative">
               <img
-                src="/images/circuitborard.png" 
-                alt="Electrical Services" 
+                src="/images/circuitborard.png"
+                alt="Electrical Services"
                 className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out"
               />
             </div>
-            
+
           </div>
 
           {/* Right Column: HTML Cards Grid (2 columns on desktop/tablet) */}
           <div className="lg:col-span-7">
-            <motion.div 
+            <motion.div
               variants={gridVariants}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
@@ -162,21 +162,19 @@ export const Services: React.FC<ServicesProps> = ({ hoveredService, onHoverServi
                     onMouseEnter={() => onHoverService(index)}
                     onMouseLeave={() => onHoverService(null)}
                   >
-                    <div 
-                      className={`h-full p-6 rounded-2xl glass-panel border transition-all duration-500 flex flex-col justify-between hover:-translate-y-1.5 relative overflow-hidden ${
-                        isHovered 
-                          ? "border-electric-amber shadow-[0_0_30px_rgba(245,166,35,0.25)] bg-[#0F3460]/90" 
+                    <div
+                      className={`h-full p-6 rounded-2xl glass-panel border transition-all duration-500 flex flex-col justify-between hover:-translate-y-1.5 relative overflow-hidden ${isHovered
+                          ? "border-electric-amber shadow-[0_0_30px_rgba(245,166,35,0.25)] bg-[#0F3460]/90"
                           : "border-neutral-900 bg-[#0F3460]/30 hover:border-neutral-800"
-                      }`}
+                        }`}
                     >
                       {/* Subtle color highlight circle on active hover */}
                       <div className={`absolute -top-16 -right-16 w-36 h-36 rounded-full bg-gradient-to-br ${service.color} blur-2xl group-hover:scale-125 transition-transform duration-700`} />
-                      
+
                       <div>
                         {/* Glowing Icon Container */}
-                        <div className={`w-11 h-11 rounded-xl bg-substation-dark border border-neutral-800/80 flex items-center justify-center mb-5 group-hover:border-electric-amber/30 transition-all duration-300 ${
-                          isHovered ? "border-electric-amber/60 shadow-[0_0_15px_rgba(245,166,35,0.15)]" : ""
-                        }`}>
+                        <div className={`w-11 h-11 rounded-xl bg-substation-dark border border-neutral-800/80 flex items-center justify-center mb-5 group-hover:border-electric-amber/30 transition-all duration-300 ${isHovered ? "border-electric-amber/60 shadow-[0_0_15px_rgba(245,166,35,0.15)]" : ""
+                          }`}>
                           <IconComponent className={`w-5 h-5 ${service.iconColor} filter drop-shadow-[0_0_3px_currentColor]`} />
                         </div>
 

@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/sections/Hero";
 import TrustBar from "./components/sections/TrustBar";
@@ -11,6 +12,8 @@ import CtaBanner from "./components/sections/CtaBanner";
 import Footer from "./components/sections/Footer";
 
 function App() {
+  const [hoveredService, setHoveredService] = useState<number | null>(null);
+
   return (
     <div className="min-h-screen bg-background text-text-light">
       {/* 2. Glassmorphism Header Navbar */}
@@ -21,11 +24,9 @@ function App() {
 
       {/* 4. Rest of the Sections */}
       <TrustBar />
-      <Services 
-        hoveredService={null} 
-        onHoverService={function (_index: number | null): void {
-          throw new Error("Function not implemented.");
-        }} 
+      <Services
+        hoveredService={hoveredService}
+        onHoverService={setHoveredService}
       />
       <About />
       <Stats />

@@ -5,7 +5,7 @@ import { Calendar, Briefcase, Award, TrendingUp } from "lucide-react";
 export const About: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLDivElement>(null);
-  
+
   const isTitleInView = useInView(titleRef, { once: true, margin: "-100px" });
 
   const timelineData = [
@@ -48,7 +48,7 @@ export const About: React.FC = () => {
 
   // Letter drop stagger animation variables
   const headingText = "Empowering Maharashtra Since 1987";
-  
+
   const letterContainerVariants = {
     hidden: {},
     visible: {
@@ -60,24 +60,24 @@ export const About: React.FC = () => {
 
   const letterVariants = {
     hidden: { opacity: 0, y: 15 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       transition: { duration: 0.4, ease: "easeOut" as const }
     }
   };
 
   return (
-    <section 
-      id="about" 
-      ref={containerRef} 
+    <section
+      id="about"
+      ref={containerRef}
       className="relative py-24 px-6 md:px-12 lg:px-24 overflow-hidden z-10"
     >
       {/* Background overlay */}
       <div className="absolute inset-0 grid-bg opacity-[0.02] pointer-events-none -z-20" />
-      
+
       <div className="max-w-7xl mx-auto">
-        
+
         {/* Title Block */}
         <div ref={titleRef} className="mb-16 text-center lg:text-left max-w-3xl">
           <span className="text-xs font-mono text-arc-cyan tracking-[0.35em] uppercase block mb-3">
@@ -92,8 +92,8 @@ export const About: React.FC = () => {
             {headingText.split(" ").map((word, wordIndex) => (
               <span key={wordIndex} className="inline-block whitespace-nowrap mr-3 last:mr-0">
                 {word.split("").map((char, charIndex) => (
-                  <motion.span 
-                    key={charIndex} 
+                  <motion.span
+                    key={charIndex}
                     variants={letterVariants}
                     className="inline-block"
                   >
@@ -110,10 +110,10 @@ export const About: React.FC = () => {
 
         {/* Two Column Layout (Substation Sticky Left | Timeline Scroll Right) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          
+
           {/* Left Column: STICKY 3D Canvas Substation Scene */}
-          <div className="lg:col-span-5 lg:sticky lg:top-24 h-[350px] lg:h-[500px] rounded-2xl border border-neutral-900 bg-[#0F3460]/25 overflow-hidden shadow-[inset_0_0_20px_rgba(0,0,0,0.5)] group relative isolate z-0">
-            
+          <div className="lg:col-span-5 lg:sticky lg:top-24 h-[450px] lg:h-[600px] rounded-2xl border border-neutral-900 bg-[#0F3460]/25 overflow-hidden shadow-[inset_0_0_20px_rgba(0,0,0,0.5)] group relative isolate z-0">
+
             {/* Static Image Overlays */}
             <div className="absolute top-4 left-4 z-20 flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#1A1A2E]/80 border border-neutral-800 text-[10px] font-mono text-text-light/60">
               <span className="w-1.5 h-1.5 rounded-full bg-arc-cyan" />
@@ -121,20 +121,19 @@ export const About: React.FC = () => {
             </div>
 
             {/* Render Static Image */}
-            <div className="w-full h-full min-h-[400px] lg:h-auto flex-grow relative overflow-hidden rounded-b-2xl lg:rounded-br-2xl">
-              <img 
-                src="/images/cameremode.png" 
-                alt="Substation Infrastructure" 
+            <div className="w-full h-full min-h-[500px] lg:h-auto flex-grow relative overflow-hidden rounded-b-2xl lg:rounded-br-2xl">
+              <img
+                src="/images/cameremode.png"
+                alt="Substation Infrastructure"
                 className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out"
               />
             </div>
           </div>
-            {/* Render 3D Substation Model */}
-          </div>
+          {/* Render 3D Substation Model */}
 
           {/* Right Column: Historical Vertical Timeline */}
           <div className="lg:col-span-7 relative">
-            
+
             {/* Vertical Timeline Guide Line */}
             <div className="absolute left-4 top-2 bottom-2 w-[2px] bg-gradient-to-b from-electric-amber via-arc-cyan to-[#0F3460] shadow-[0_0_8px_rgba(0,212,255,0.2)]" />
 
@@ -142,7 +141,7 @@ export const About: React.FC = () => {
             <div className="flex flex-col gap-12">
               {timelineData.map((milestone, index) => {
                 const IconComponent = milestone.icon;
-                
+
                 return (
                   <motion.div
                     key={index}
@@ -159,7 +158,7 @@ export const About: React.FC = () => {
 
                     {/* Timeline Bubble Content */}
                     <div className="p-6 md:p-8 rounded-2xl glass-panel border border-neutral-900 bg-[#0F3460]/25 hover:border-neutral-800 hover:bg-[#0F3460]/45 hover:shadow-[0_4px_30px_rgba(0,0,0,0.3)] transition-all duration-300 relative">
-                      
+
                       {/* Year badge */}
                       <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
                         <div className="flex items-center gap-2">
@@ -189,8 +188,9 @@ export const About: React.FC = () => {
           </div>
 
         </div>
+      </div>
 
-      
+
     </section>
   );
 };
