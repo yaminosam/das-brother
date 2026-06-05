@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Compass, Network, Cable, Cpu, AlertTriangle, ShieldCheck, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 interface ServicesProps {
   hoveredService: number | null;
@@ -15,7 +15,7 @@ export const Services: React.FC<ServicesProps> = ({ hoveredService, onHoverServi
     {
       title: "Electrical Design",
       desc: "Custom engineering layout designs, CAD blueprints, system protection coordination, and load calculation sheets.",
-      icon: Compass,
+      image: "/images/service_design.png",
       color: "from-arc-cyan/20 to-transparent",
       borderColor: "group-hover:border-arc-cyan/40",
       iconColor: "text-arc-cyan"
@@ -23,7 +23,7 @@ export const Services: React.FC<ServicesProps> = ({ hoveredService, onHoverServi
     {
       title: "Substation Construction",
       desc: "Turnkey erection & commissioning of 11kV / 22kV / 33kV substations, power transformers, and switchyard gantries.",
-      icon: Network,
+      image: "/images/service_substation.png",
       color: "from-electric-amber/20 to-transparent",
       borderColor: "group-hover:border-electric-amber/40",
       iconColor: "text-electric-amber"
@@ -31,7 +31,7 @@ export const Services: React.FC<ServicesProps> = ({ hoveredService, onHoverServi
     {
       title: "HT & LT Works",
       desc: "High Tension & Low Tension underground cable laying, straight jointing, end termination, and overhead line structures.",
-      icon: Cable,
+      image: "/images/service_cabling.png",
       color: "from-arc-cyan/20 to-transparent",
       borderColor: "group-hover:border-arc-cyan/40",
       iconColor: "text-arc-cyan"
@@ -39,7 +39,7 @@ export const Services: React.FC<ServicesProps> = ({ hoveredService, onHoverServi
     {
       title: "Panel Fabrication",
       desc: "Manufacturing custom electric control panels, power distribution boards (PDB), motor control centers (MCC), and APFC panels.",
-      icon: Cpu,
+      image: "/images/service_panel.png",
       color: "from-electric-amber/20 to-transparent",
       borderColor: "group-hover:border-electric-amber/40",
       iconColor: "text-electric-amber"
@@ -47,7 +47,7 @@ export const Services: React.FC<ServicesProps> = ({ hoveredService, onHoverServi
     {
       title: "Emergency Services",
       desc: "24/7 emergency breakdown troubleshooting, fault location trace testing, transformer oil filtration, and rapid restoration.",
-      icon: AlertTriangle,
+      image: "/images/service_emergency.png",
       color: "from-red-500/10 to-transparent",
       borderColor: "group-hover:border-red-500/40",
       iconColor: "text-red-500"
@@ -55,7 +55,7 @@ export const Services: React.FC<ServicesProps> = ({ hoveredService, onHoverServi
     {
       title: "Installation & Commissioning",
       desc: "Final testing parameters validation, safety statutory inspection approvals, and full energization sequence execution.",
-      icon: ShieldCheck,
+      image: "/images/service_commissioning.png",
       color: "from-success-live/15 to-transparent",
       borderColor: "group-hover:border-success-live/40",
       iconColor: "text-success-live"
@@ -151,7 +151,6 @@ export const Services: React.FC<ServicesProps> = ({ hoveredService, onHoverServi
               className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full h-full"
             >
               {servicesData.map((service, index) => {
-                const IconComponent = service.icon;
                 const isHovered = hoveredService === index;
 
                 return (
@@ -164,18 +163,22 @@ export const Services: React.FC<ServicesProps> = ({ hoveredService, onHoverServi
                   >
                     <div
                       className={`h-full p-6 rounded-2xl glass-panel border transition-all duration-500 flex flex-col justify-between hover:-translate-y-1.5 relative overflow-hidden ${isHovered
-                          ? "border-electric-amber shadow-[0_0_30px_rgba(245,166,35,0.25)] bg-[#0F3460]/90"
-                          : "border-neutral-900 bg-[#0F3460]/30 hover:border-neutral-800"
+                        ? "border-electric-amber shadow-[0_0_30px_rgba(245,166,35,0.25)] bg-[#0F3460]/90"
+                        : "border-neutral-900 bg-[#0F3460]/30 hover:border-neutral-800"
                         }`}
                     >
                       {/* Subtle color highlight circle on active hover */}
                       <div className={`absolute -top-16 -right-16 w-36 h-36 rounded-full bg-gradient-to-br ${service.color} blur-2xl group-hover:scale-125 transition-transform duration-700`} />
 
                       <div>
-                        {/* Glowing Icon Container */}
-                        <div className={`w-11 h-11 rounded-xl bg-substation-dark border border-neutral-800/80 flex items-center justify-center mb-5 group-hover:border-electric-amber/30 transition-all duration-300 ${isHovered ? "border-electric-amber/60 shadow-[0_0_15px_rgba(245,166,35,0.15)]" : ""
-                          }`}>
-                          <IconComponent className={`w-5 h-5 ${service.iconColor} filter drop-shadow-[0_0_3px_currentColor]`} />
+                        {/* Service Card Image Banner */}
+                        <div className="w-full h-32 rounded-xl overflow-hidden mb-5 border border-neutral-900/50 relative">
+                          <img 
+                            src={service.image} 
+                            alt={service.title} 
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-[#0A0F1E] to-transparent opacity-60" />
                         </div>
 
                         <h3 className="font-orbitron font-extrabold text-base text-text-light group-hover:text-electric-amber transition-colors duration-300 mb-2 flex items-center gap-2">

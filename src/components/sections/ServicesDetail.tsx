@@ -18,47 +18,7 @@ export const ServicesDetail: React.FC = () => {
       ],
       icon: Zap,
       accentColor: "#E87722",
-      // Custom SVG engineering drawing representation
-      blueprint: (
-        <svg viewBox="0 0 400 300" className="w-full h-full text-glow-amber">
-          <defs>
-            <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
-              <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(232, 119, 34, 0.05)" strokeWidth="1" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#grid)" />
-          {/* Transformer outline */}
-          <rect x="130" y="110" width="140" height="100" rx="6" fill="none" stroke="#E87722" strokeWidth="2" strokeDasharray="4 2" />
-          {/* Radiator fins */}
-          <line x1="100" y1="120" x2="130" y2="120" stroke="#E87722" strokeWidth="1.5" />
-          <line x1="100" y1="140" x2="130" y2="140" stroke="#E87722" strokeWidth="1.5" />
-          <line x1="100" y1="160" x2="130" y2="160" stroke="#E87722" strokeWidth="1.5" />
-          <line x1="100" y1="180" x2="130" y2="180" stroke="#E87722" strokeWidth="1.5" />
-          <line x1="100" y1="200" x2="130" y2="200" stroke="#E87722" strokeWidth="1.5" />
-          
-          <line x1="270" y1="120" x2="300" y2="120" stroke="#E87722" strokeWidth="1.5" />
-          <line x1="270" y1="140" x2="300" y2="140" stroke="#E87722" strokeWidth="1.5" />
-          <line x1="270" y1="160" x2="300" y2="160" stroke="#E87722" strokeWidth="1.5" />
-          <line x1="270" y1="180" x2="300" y2="180" stroke="#E87722" strokeWidth="1.5" />
-          <line x1="270" y1="200" x2="300" y2="200" stroke="#E87722" strokeWidth="1.5" />
-          {/* Conservator tank */}
-          <rect x="170" y="65" width="60" height="25" rx="3" fill="none" stroke="#E87722" strokeWidth="1.5" />
-          <line x1="200" y1="90" x2="200" y2="110" stroke="#E87722" strokeWidth="2" />
-          {/* Bushings */}
-          <line x1="150" y1="110" x2="150" y2="85" stroke="#00D4FF" strokeWidth="2" />
-          <circle cx="150" cy="80" r="5" fill="#00D4FF" />
-          <line x1="200" y1="110" x2="200" y2="85" stroke="#00D4FF" strokeWidth="2" />
-          <circle cx="200" cy="80" r="5" fill="#00D4FF" />
-          <line x1="250" y1="110" x2="250" y2="85" stroke="#00D4FF" strokeWidth="2" />
-          <circle cx="250" cy="80" r="5" fill="#00D4FF" />
-          {/* Ground indicator */}
-          <line x1="130" y1="190" x2="130" y2="230" stroke="#39FF14" strokeWidth="1.5" />
-          <line x1="120" y1="230" x2="140" y2="230" stroke="#39FF14" strokeWidth="2" />
-          <line x1="124" y1="235" x2="136" y2="235" stroke="#39FF14" strokeWidth="1.5" />
-          <line x1="128" y1="240" x2="132" y2="240" stroke="#39FF14" strokeWidth="1" />
-          <text x="20" y="40" className="font-mono text-[9px] fill-[#E87722] tracking-widest uppercase">SCHEMATIC: DB-T1 CORE MVA</text>
-        </svg>
-      )
+      image: "/images/subsituationepc.png"
     },
     {
       id: "cable-jointing",
@@ -75,33 +35,7 @@ export const ServicesDetail: React.FC = () => {
       ],
       icon: Cable,
       accentColor: "#00D4FF",
-      blueprint: (
-        <svg viewBox="0 0 400 300" className="w-full h-full text-glow-cyan">
-          <defs>
-            <pattern id="grid-cyan" width="20" height="20" patternUnits="userSpaceOnUse">
-              <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(0, 212, 255, 0.05)" strokeWidth="1" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#grid-cyan)" />
-          {/* Cable profile */}
-          <rect x="50" y="130" width="300" height="40" rx="4" fill="none" stroke="#00D4FF" strokeWidth="2" />
-          {/* Inside core lines */}
-          <line x1="50" y1="150" x2="350" y2="150" stroke="#00D4FF" strokeWidth="1" strokeDasharray="3 3" />
-          {/* Joint sleeve */}
-          <rect x="140" y="115" width="120" height="70" rx="8" fill="none" stroke="#E87722" strokeWidth="2.5" />
-          {/* Copper joints inside */}
-          <circle cx="160" cy="150" r="8" fill="none" stroke="#00D4FF" strokeWidth="1.5" />
-          <circle cx="200" cy="150" r="8" fill="none" stroke="#00D4FF" strokeWidth="1.5" />
-          <circle cx="240" cy="150" r="8" fill="none" stroke="#00D4FF" strokeWidth="1.5" />
-          {/* Measurement line */}
-          <line x1="140" y1="210" x2="260" y2="210" stroke="#E8EDF5" strokeWidth="1" />
-          <line x1="140" y1="205" x2="140" y2="215" stroke="#E8EDF5" strokeWidth="1" />
-          <line x1="260" y1="205" x2="260" y2="215" stroke="#E8EDF5" strokeWidth="1" />
-          <text x="165" y="225" className="font-mono text-[9px] fill-text-light/60 tracking-wider">SLEEVE: 1200mm</text>
-          
-          <text x="20" y="40" className="font-mono text-[9px] fill-[#00D4FF] tracking-widest uppercase">SECTION: HT JOINT SLEEVE PROFILE</text>
-        </svg>
-      )
+      image: "/images/ht&ltind.png"
     },
     {
       id: "emergency-restoration",
@@ -118,27 +52,7 @@ export const ServicesDetail: React.FC = () => {
       ],
       icon: Clock,
       accentColor: "#39FF14",
-      blueprint: (
-        <svg viewBox="0 0 400 300" className="w-full h-full">
-          <defs>
-            <pattern id="grid-green" width="20" height="20" patternUnits="userSpaceOnUse">
-              <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(57, 255, 20, 0.05)" strokeWidth="1" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#grid-green)" />
-          {/* Oscilloscope boundary */}
-          <rect x="60" y="70" width="280" height="160" rx="10" fill="none" stroke="#39FF14" strokeWidth="2" strokeOpacity="0.8" />
-          {/* Center line */}
-          <line x1="60" y1="150" x2="340" y2="150" stroke="#39FF14" strokeWidth="1" strokeOpacity="0.3" />
-          {/* Voltage spike line */}
-          <path d="M 60 150 L 120 150 L 140 180 L 160 80 L 180 210 L 200 140 L 220 155 L 240 150 L 340 150" fill="none" stroke="#39FF14" strokeWidth="2.5" />
-          {/* Grid markers */}
-          <circle cx="160" cy="80" r="4" fill="#39FF14" />
-          <text x="160" y="65" className="font-mono text-[9px] fill-[#39FF14] text-center">FAULT DETECTED: PHASE B</text>
-          
-          <text x="20" y="40" className="font-mono text-[9px] fill-[#39FF14] tracking-widest uppercase">MONITOR: 24/7 GRID OSCILLOGRAM</text>
-        </svg>
-      )
+      image: "/images/emergencyind.png"
     }
   ];
 
@@ -196,19 +110,26 @@ export const ServicesDetail: React.FC = () => {
                 </ul>
               </div>
 
-              {/* Graphical Blueprint Area */}
+              {/* Graphical Image Area */}
               <div 
-                className={`lg:col-span-6 h-[260px] md:h-[340px] rounded-2xl border border-neutral-900 bg-[#0F3460]/15 overflow-hidden shadow-[inset_0_0_15px_rgba(0,0,0,0.5)] flex items-center justify-center p-4 relative group ${
+                className={`lg:col-span-6 h-[260px] md:h-[340px] rounded-2xl border border-neutral-900 bg-[#0F3460]/15 overflow-hidden shadow-[inset_0_0_15px_rgba(0,0,0,0.5)] relative group ${
                   isEven ? "lg:order-2" : "lg:order-1"
                 }`}
               >
                 {/* Visual corners to reinforce industrial style */}
-                <div className="absolute top-2 left-2 w-1.5 h-1.5 border-t border-l border-neutral-800" />
-                <div className="absolute top-2 right-2 w-1.5 h-1.5 border-t border-r border-neutral-800" />
-                <div className="absolute bottom-2 left-2 w-1.5 h-1.5 border-b border-l border-neutral-800" />
-                <div className="absolute bottom-2 right-2 w-1.5 h-1.5 border-b border-r border-neutral-800" />
+                <div className="absolute top-2 left-2 w-1.5 h-1.5 border-t border-l border-neutral-800 z-10" />
+                <div className="absolute top-2 right-2 w-1.5 h-1.5 border-t border-r border-neutral-800 z-10" />
+                <div className="absolute bottom-2 left-2 w-1.5 h-1.5 border-b border-l border-neutral-800 z-10" />
+                <div className="absolute bottom-2 right-2 w-1.5 h-1.5 border-b border-r border-neutral-800 z-10" />
 
-                {detail.blueprint}
+                <img 
+                  src={detail.image} 
+                  alt={detail.title} 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                />
+                
+                {/* Subtle dark gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0F1E]/50 to-transparent pointer-events-none" />
               </div>
             </div>
           );

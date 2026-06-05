@@ -78,16 +78,27 @@ export const About: React.FC = () => {
 
       <div className="max-w-7xl mx-auto">
 
-        {/* Title Block */}
-        <div ref={titleRef} className="mb-16 text-center lg:text-left max-w-3xl">
-          <span className="text-xs font-mono text-arc-cyan tracking-[0.35em] uppercase block mb-3">
+        {/* Title Block with Background Image */}
+        <div 
+          ref={titleRef} 
+          className="mb-16 text-center max-w-5xl mx-auto rounded-3xl border border-neutral-900 overflow-hidden relative p-8 md:p-12 lg:p-16 shadow-[inset_0_0_40px_rgba(0,0,0,0.8)] group"
+        >
+          {/* Background Image with Overlay */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center -z-10 opacity-30 group-hover:scale-105 transition-transform duration-700 ease-out" 
+            style={{ backgroundImage: "url('/images/cameremode.png')" }}
+          />
+          {/* Radial/Linear Gradient overlay to ensure high readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#1A1A2E]/90 via-[#0F3460]/75 to-[#1A1A2E]/90 -z-10" />
+
+          <span className="text-xs font-mono text-arc-cyan tracking-[0.35em] uppercase block mb-3 relative z-10">
             Our Legacy & Story
           </span>
           <motion.div
             variants={letterContainerVariants}
             initial="hidden"
             animate={isTitleInView ? "visible" : "hidden"}
-            className="flex flex-wrap justify-center lg:justify-start font-orbitron font-extrabold text-3xl md:text-5xl text-text-light tracking-tight mb-4"
+            className="flex flex-wrap justify-center font-orbitron font-extrabold text-3xl md:text-5xl text-text-light tracking-tight mb-4 relative z-10"
           >
             {headingText.split(" ").map((word, wordIndex) => (
               <span key={wordIndex} className="inline-block whitespace-nowrap mr-3 last:mr-0">
@@ -103,90 +114,58 @@ export const About: React.FC = () => {
               </span>
             ))}
           </motion.div>
-          <p className="font-inter text-text-light/60 text-sm md:text-base leading-relaxed">
+          <p className="font-inter text-text-light/80 text-sm md:text-base leading-relaxed max-w-2xl mx-auto relative z-10">
             From humble beginnings to building Maharashtra's critical power infrastructure, our journey is defined by engineering precision and electrical reliability.
           </p>
         </div>
 
-        {/* Two Column Layout (Substation Sticky Left | Timeline Scroll Right) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        {/* Timeline Cards Grid Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          {timelineData.map((milestone, index) => {
+            const IconComponent = milestone.icon;
+            const isLast = index === timelineData.length - 1;
 
-          {/* Left Column: STICKY 3D Canvas Substation Scene */}
-          <div className="lg:col-span-5 lg:sticky lg:top-24 h-[450px] lg:h-[600px] rounded-2xl border border-neutral-900 bg-[#0F3460]/25 overflow-hidden shadow-[inset_0_0_20px_rgba(0,0,0,0.5)] group relative isolate z-0">
-
-            {/* Static Image Overlays */}
-            <div className="absolute top-4 left-4 z-20 flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#1A1A2E]/80 border border-neutral-800 text-[10px] font-mono text-text-light/60">
-              <span className="w-1.5 h-1.5 rounded-full bg-arc-cyan" />
-              OUR INFRASTRUCTURE
-            </div>
-
-            {/* Render Static Image */}
-            <div className="w-full h-full min-h-[500px] lg:h-auto flex-grow relative overflow-hidden rounded-b-2xl lg:rounded-br-2xl">
-              <img
-                src="/images/cameremode.png"
-                alt="Substation Infrastructure"
-                className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out"
-              />
-            </div>
-          </div>
-          {/* Render 3D Substation Model */}
-
-          {/* Right Column: Historical Vertical Timeline */}
-          <div className="lg:col-span-7 relative">
-
-            {/* Vertical Timeline Guide Line */}
-            <div className="absolute left-4 top-2 bottom-2 w-[2px] bg-gradient-to-b from-electric-amber via-arc-cyan to-[#0F3460] shadow-[0_0_8px_rgba(0,212,255,0.2)]" />
-
-            {/* Timeline Cards */}
-            <div className="flex flex-col gap-12">
-              {timelineData.map((milestone, index) => {
-                const IconComponent = milestone.icon;
-
-                return (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: 40 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, margin: "-80px" }}
-                    transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] as const }}
-                    className="relative pl-10 md:pl-12 group"
-                  >
-                    {/* Node Pointer Bullet Dot */}
-                    <div className="absolute left-[3px] top-1.5 w-6 h-6 rounded-full bg-substation-dark border-2 border-electric-amber flex items-center justify-center z-15 shadow-[0_0_10px_rgba(245,166,35,0.4)] group-hover:border-arc-cyan transition-colors duration-300">
-                      <div className="w-2.5 h-2.5 rounded-full bg-electric-amber group-hover:bg-arc-cyan animate-pulse-glow" />
-                    </div>
-
-                    {/* Timeline Bubble Content */}
-                    <div className="p-6 md:p-8 rounded-2xl glass-panel border border-neutral-900 bg-[#0F3460]/25 hover:border-neutral-800 hover:bg-[#0F3460]/45 hover:shadow-[0_4px_30px_rgba(0,0,0,0.3)] transition-all duration-300 relative">
-
-                      {/* Year badge */}
-                      <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
-                        <div className="flex items-center gap-2">
-                          <IconComponent className="w-5 h-5 text-electric-amber group-hover:text-arc-cyan transition-colors" />
-                          <span className="font-mono text-2xl md:text-3xl font-black text-electric-amber tracking-wider text-glow-amber">
-                            {milestone.year}
-                          </span>
-                        </div>
-                        <span className="px-2 py-0.5 rounded border border-neutral-800 bg-substation-dark text-[9px] font-mono text-text-light/50 tracking-wider">
-                          {milestone.badge}
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] as const }}
+                className={`group ${
+                  isLast 
+                    ? "md:col-span-2 md:justify-self-center w-full md:max-w-xl" 
+                    : "w-full"
+                }`}
+              >
+                {/* Timeline Bubble Content */}
+                <div className="p-6 md:p-8 rounded-2xl glass-panel border border-neutral-900 bg-[#0F3460]/25 hover:border-neutral-800 hover:bg-[#0F3460]/45 hover:shadow-[0_4px_30px_rgba(0,0,0,0.3)] transition-all duration-300 relative h-full flex flex-col justify-between">
+                  <div>
+                    {/* Year badge */}
+                    <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+                      <div className="flex items-center gap-2">
+                        <IconComponent className="w-5 h-5 text-electric-amber group-hover:text-arc-cyan transition-colors" />
+                        <span className="font-mono text-2xl md:text-3xl font-black text-electric-amber tracking-wider text-glow-amber">
+                          {milestone.year}
                         </span>
                       </div>
-
-                      <h3 className="font-orbitron font-extrabold text-base md:text-lg text-text-light group-hover:text-arc-cyan transition-colors mb-2">
-                        {milestone.title}
-                      </h3>
-
-                      <p className="font-inter text-xs md:text-sm text-text-light/60 leading-relaxed">
-                        {milestone.desc}
-                      </p>
+                      <span className="px-2 py-0.5 rounded border border-neutral-800 bg-substation-dark text-[9px] font-mono text-text-light/50 tracking-wider">
+                        {milestone.badge}
+                      </span>
                     </div>
-                  </motion.div>
-                );
-              })}
-            </div>
 
-          </div>
+                    <h3 className="font-orbitron font-extrabold text-base md:text-lg text-text-light group-hover:text-arc-cyan transition-colors mb-2">
+                      {milestone.title}
+                    </h3>
 
+                    <p className="font-inter text-xs md:text-sm text-text-light/60 leading-relaxed">
+                      {milestone.desc}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
 
