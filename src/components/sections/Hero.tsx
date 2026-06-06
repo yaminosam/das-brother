@@ -125,22 +125,7 @@ export const Hero: React.FC = () => {
         </motion.div>
       </div>
 
-      {/* Animated downward bouncing scroll indicator */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none">
-        <motion.span
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-          className="text-xs font-mono text-text-light/35 tracking-widest"
-        >
-          SCROLL FOR COPPERS
-        </motion.span>
-        <motion.div
-          animate={{ y: [0, 6, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <ChevronDown className="w-4 h-4 text-electric-amber" />
-        </motion.div>
-      </div>
+
     </section>
   );
 };
