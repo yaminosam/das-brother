@@ -1,6 +1,6 @@
 import React from "react";
 import { motion, type Variants } from "framer-motion";
-import { Zap, ArrowRight, ChevronDown } from "lucide-react";
+import { Zap, ArrowRight } from "lucide-react";
 
 
 export const Hero: React.FC = () => {
