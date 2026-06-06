@@ -34,21 +34,24 @@ export const Navbar: React.FC = () => {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-        className={`fixed top-0 left-0 w-full z-40 transition-all duration-500 border-b ${
-          scrolled 
-            ? "glass-panel py-3 shadow-[0_4px_30px_rgba(0,0,0,0.4)] border-neutral-900/60" 
+        className={`fixed top-0 left-0 w-full z-40 transition-all duration-500 border-b ${scrolled
+            ? "glass-panel py-3 shadow-[0_4px_30px_rgba(0,0,0,0.4)] border-neutral-900/60"
             : "bg-transparent py-5 border-transparent"
-        }`}
+          }`}
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           {/* Logo Brand area */}
           <a href="#home" className="flex items-center gap-3 group">
-            <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-substation-dark/80 border border-neutral-800 shadow-[0_0_15px_rgba(245,166,35,0.1)] group-hover:border-electric-amber/50 transition-all duration-300">
-              <Zap className="w-5 h-5 text-electric-amber filter drop-shadow-[0_0_4px_rgba(245,166,35,0.7)] group-hover:rotate-12 transition-transform duration-300" />
+            <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-substation-dark/80 border border-neutral-800 shadow-[0_0_15px_rgba(245,166,35,0.1)] group-hover:border-electric-amber/50 transition-all duration-300 overflow-hidden">
+              <img
+                src="/images/Screenshot 2026-06-06 120742.png"
+                alt="Das & Brothers Logo"
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+              />
               {/* Pulsing ring around logo */}
-              <div className="absolute inset-0 rounded-xl border border-arc-cyan/20 animate-ping [animation-duration:3s]" />
+              <div className="absolute inset-0 rounded-xl border border-arc-cyan/20 animate-ping [animation-duration:3s] pointer-events-none" />
             </div>
-            
+
             <div className="flex flex-col">
               <span className="font-orbitron font-black text-sm md:text-base tracking-wider text-text-light group-hover:text-electric-amber transition-colors duration-300">
                 DAS & BROTHERS
@@ -76,7 +79,7 @@ export const Navbar: React.FC = () => {
 
           {/* Get a Quote CTA */}
           <div className="flex items-center gap-4">
-            <a 
+            <a
               href="#contact"
               className="relative hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-xl font-orbitron text-xs font-bold tracking-wider text-white bg-slate-950 hover:bg-slate-800 border border-slate-700 transition-all duration-300 group shadow-lg"
             >
@@ -138,9 +141,9 @@ export const Navbar: React.FC = () => {
                 >
                   GET A QUOTE <Zap className="w-4 h-4" />
                 </a>
-                
-                <a 
-                  href="tel:+91201234567" 
+
+                <a
+                  href="tel:+91201234567"
                   className="flex items-center gap-2 font-mono text-xs text-arc-cyan hover:text-text-light transition-colors"
                 >
                   <PhoneCall className="w-3.5 h-3.5" /> +91 20 2749 1987

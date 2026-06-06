@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Zap, Volume2, VolumeX } from "lucide-react";
+import { Volume2, VolumeX } from "lucide-react";
 
 interface OpeningSequenceProps {
   onComplete: () => void;
@@ -276,10 +276,14 @@ export const OpeningSequence: React.FC<OpeningSequenceProps> = ({ onComplete }) 
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 1.5, opacity: 0 }}
               transition={{ type: "spring", stiffness: 120, damping: 10 }}
-              className="relative w-24 h-24 mb-6 flex items-center justify-center rounded-2xl bg-gradient-to-br from-[#0F3460] to-[#1A1A2E] border border-neutral-800/80 shadow-[0_0_30px_rgba(0,212,255,0.15)] group"
+              className="relative w-24 h-24 mb-6 flex items-center justify-center rounded-2xl bg-gradient-to-br from-[#0F3460] to-[#1A1A2E] border border-neutral-800/80 shadow-[0_0_30px_rgba(0,212,255,0.15)] group overflow-hidden"
             >
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-arc-cyan/20 to-electric-amber/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <Zap className="w-12 h-12 text-[#E87722] filter drop-shadow-[0_0_8px_#E87722] animate-pulse" />
+              <img 
+                src="/images/Screenshot 2026-06-06 120742.png" 
+                alt="Das & Brothers Logo" 
+                className="w-14 h-14 object-cover rounded-full border border-slate-700/50 shadow-[0_0_15px_rgba(245,166,35,0.2)] animate-pulse"
+              />
               
               {/* Spinning outer rings */}
               <div className="absolute inset-0 border border-[#00D4FF]/20 rounded-2xl animate-spin [animation-duration:12s]" />
