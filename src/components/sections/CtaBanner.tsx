@@ -14,7 +14,7 @@ export const CtaBanner: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!formState.name || !formState.email) return;
-    
+
     // Simulate submission
     setSubmitted(true);
     setTimeout(() => {
@@ -24,8 +24,8 @@ export const CtaBanner: React.FC = () => {
   };
 
   return (
-    <section 
-      id="contact" 
+    <section
+      id="contact"
       className="relative py-24 px-6 md:px-12 lg:px-24 overflow-hidden z-10 border-t border-neutral-900/60 bg-[#1A1A2E]/80"
     >
       {/* Background graphic */}
@@ -34,7 +34,7 @@ export const CtaBanner: React.FC = () => {
 
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          
+
           {/* Left Side: Contact Information & Address */}
           <div className="lg:col-span-5 flex flex-col justify-center h-full">
             <span className="text-xs font-mono text-arc-cyan tracking-[0.35em] uppercase block mb-3">
@@ -92,7 +92,7 @@ export const CtaBanner: React.FC = () => {
 
           {/* Right Side: Interactive Quote Request Form */}
           <div className="lg:col-span-7 p-8 rounded-2xl border border-neutral-900 bg-[#0F3460]/15 shadow-[0_10px_30px_rgba(0,0,0,0.3)] relative overflow-hidden">
-            
+
             {/* Visual Grid Indicators */}
             <div className="absolute top-2 left-2 w-1.5 h-1.5 border-t border-l border-neutral-800" />
             <div className="absolute top-2 right-2 w-1.5 h-1.5 border-t border-r border-neutral-800" />
@@ -100,76 +100,76 @@ export const CtaBanner: React.FC = () => {
             <div className="absolute bottom-2 right-2 w-1.5 h-1.5 border-b border-r border-neutral-800" />
 
             <form onSubmit={handleSubmit} className="flex flex-col gap-6 relative z-10">
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Name */}
                 <div className="flex flex-col gap-2">
-                  <label className="font-orbitron text-[10px] font-bold tracking-wider text-text-light/75">
+                  <label className="font-orbitron text-[10px] font-bold tracking-wider text-text-light/90">
                     CONTACT NAME
                   </label>
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     required
                     value={formState.name}
                     onChange={(e) => setFormState({ ...formState, name: e.target.value })}
                     placeholder="Enter name"
-                    className="px-4 py-3 rounded-xl border border-neutral-800 bg-substation-dark/40 text-sm font-inter text-text-light focus:outline-none focus:border-electric-amber transition-colors"
+                    className="px-4 py-3 rounded-xl border border-slate-700 bg-[#16223F] text-sm font-inter text-text-light placeholder:text-slate-400 focus:outline-none focus:border-electric-amber focus:ring-1 focus:ring-electric-amber/30 transition-all"
                   />
                 </div>
 
                 {/* Email */}
                 <div className="flex flex-col gap-2">
-                  <label className="font-orbitron text-[10px] font-bold tracking-wider text-text-light/75">
+                  <label className="font-orbitron text-[10px] font-bold tracking-wider text-text-light/90">
                     EMAIL ADDRESS
                   </label>
-                  <input 
-                    type="email" 
+                  <input
+                    type="email"
                     required
                     value={formState.email}
                     onChange={(e) => setFormState({ ...formState, email: e.target.value })}
                     placeholder="Enter email"
-                    className="px-4 py-3 rounded-xl border border-neutral-800 bg-substation-dark/40 text-sm font-inter text-text-light focus:outline-none focus:border-[#00D4FF] transition-colors"
+                    className="px-4 py-3 rounded-xl border border-slate-700 bg-[#16223F] text-sm font-inter text-text-light placeholder:text-slate-400 focus:outline-none focus:border-[#00D4FF] focus:ring-1 focus:ring-[#00D4FF]/30 transition-all"
                   />
                 </div>
               </div>
 
               {/* Project Type */}
               <div className="flex flex-col gap-2">
-                <label className="font-orbitron text-[10px] font-bold tracking-wider text-text-light/75">
+                <label className="font-orbitron text-[10px] font-bold tracking-wider text-text-light/90">
                   PROJECT CATEGORY
                 </label>
-                <select 
+                <select
                   value={formState.projectType}
                   onChange={(e) => setFormState({ ...formState, projectType: e.target.value })}
-                  className="px-4 py-3 rounded-xl border border-neutral-800 bg-substation-dark/40 text-sm font-inter text-text-light focus:outline-none focus:border-electric-amber transition-colors appearance-none cursor-pointer"
+                  className="px-4 py-3 rounded-xl border border-slate-700 bg-[#16223F] text-sm font-inter text-text-light focus:outline-none focus:border-electric-amber focus:ring-1 focus:ring-electric-amber/30 transition-all appearance-none cursor-pointer"
                 >
-                  <option value="Substation">Substation Construction (11k/33kV)</option>
-                  <option value="Cabling">Underground HT/LT Cabling</option>
-                  <option value="Panel">Control Panel Fabrication</option>
-                  <option value="Maintenance">Annual Maintenance Contract (AMC)</option>
-                  <option value="Other">Other Grid Requirements</option>
+                  <option value="Substation" className="bg-[#121829] text-text-light">Substation Construction (11k/33kV)</option>
+                  <option value="Cabling" className="bg-[#121829] text-text-light">Underground HT/LT Cabling</option>
+                  <option value="Panel" className="bg-[#121829] text-text-light">Control Panel Fabrication</option>
+                  <option value="Maintenance" className="bg-[#121829] text-text-light">Annual Maintenance Contract (AMC)</option>
+                  <option value="Other" className="bg-[#121829] text-text-light">Other Grid Requirements</option>
                 </select>
               </div>
 
               {/* Message */}
               <div className="flex flex-col gap-2">
-                <label className="font-orbitron text-[10px] font-bold tracking-wider text-text-light/75">
+                <label className="font-orbitron text-[10px] font-bold tracking-wider text-text-light/90">
                   SPECIFIC GRID REQUIREMENTS
                 </label>
-                <textarea 
+                <textarea
                   rows={4}
                   value={formState.message}
                   onChange={(e) => setFormState({ ...formState, message: e.target.value })}
                   placeholder="Describe your project scope..."
-                  className="px-4 py-3 rounded-xl border border-neutral-800 bg-substation-dark/40 text-sm font-inter text-text-light focus:outline-none focus:border-electric-amber transition-colors resize-none"
+                  className="px-4 py-3 rounded-xl border border-slate-700 bg-[#16223F] text-sm font-inter text-text-light placeholder:text-slate-400 focus:outline-none focus:border-electric-amber focus:ring-1 focus:ring-electric-amber/30 transition-all resize-none"
                 />
               </div>
 
               {/* Submit Button */}
-              <button 
+              <button
                 type="submit"
                 disabled={submitted}
-                className="w-full py-4 rounded-xl font-orbitron text-xs md:text-sm font-bold tracking-widest text-deep-grid-navy bg-electric-amber hover:bg-electric-amber-dark flex items-center justify-center gap-3 transition-all duration-300 shadow-[0_0_15px_rgba(245,166,35,0.2)]"
+                className="w-full py-4 rounded-xl font-orbitron text-xs md:text-sm font-bold tracking-widest text-deep-grid-navy bg-electric-amber hover:bg-electric-amber-dark flex items-center justify-center gap-3 transition-all duration-300 shadow-[0_0_15px_rgba(245,166,35,0.2)] cursor-pointer"
               >
                 {submitted ? (
                   <>
@@ -184,7 +184,7 @@ export const CtaBanner: React.FC = () => {
 
               {/* Subtitle Message */}
               {submitted && (
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   className="p-3.5 rounded border border-success-live/20 bg-success-live/5 text-success-live text-center text-xs font-mono tracking-wider"
